@@ -1,6 +1,11 @@
+
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # 👈 Enables CORS for all routes
+
+
 
 fee_records = [
     {"student_name": "Riya Sharma", "class": "Grade 5", "pending_amount": 6200, "term": "Term 2", "last_payment_date": "2025-06-10"},
