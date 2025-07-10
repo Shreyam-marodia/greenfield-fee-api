@@ -1,9 +1,10 @@
 services:
   - type: web
     name: greenfield-fee-api
-    env: python
-    buildCommand: ""
-    startCommand: gunicorn app:app
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
     envVars:
-      - key: PORT
-        value: 8080
+      - key: FLASK_ENV
+        value: production
+    plan: free
